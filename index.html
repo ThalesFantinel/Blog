@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="blog">
+  <head>
+    <title>Space Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script> 
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="script" src="./app.js"></script>
+    <link href="./css/mediumish.css" rel="stylesheet" />
+  </head>
+  <body>
+
+<!-- Começo Nav
+================================================== -->
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+      <button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container">
+
+<!-- Começo Logo
+================================================== -->
+
+        <a class="navbar-brand" href="index.html">
+          <img src="./img/Logo Space.png" alt="logo" />
+        </a>
+
+ <!-- Fim Logo
+================================================== -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Notícias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="post.html">Post</a>
+            </li>
+          </ul>
+<!-- Fim Menu
+================================================== -->
+
+
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="Search"
+            />
+            <span class="search-icon"
+              ><svg
+                class="svgIcon-use"
+                width="25"
+                height="25"
+                viewbox="0 0 25 25"
+              ></svg>
+              ></span
+            >
+          </form>
+        </div>
+      </div>
+    </nav>
+
+<!-- Fim da Nav
+================================================== -->
+
+<!-- Começo título
+================================================== -->
+    <div class="container">
+      <div class="mainheading">
+        <h1 class="sitetitle">Space Blog</h1>
+        <p class="lead">
+          Um blog feito de trabalho para a matéria de design do curso de
+          informática.
+        </p>
+      </div>
+<!-- Fim título
+================================================== -->
+
+<!-- Começo do post
+================================================== -->
+
+          <div class="container">
+            <div class="row">
+              <div class="col" ng-controller="Rest">
+                <div class="row mb-5">
+                  <div class="col-md-6 mb-3" ng-repeat="publicacao in publicacoes">
+                    <div class="card">
+                      <div class="row">
+                        <div class="col-md-5 wrapthumbnail">
+                          <a href="post.html">
+                            <img ng-src="https://api-rest-post-diegocandido.herokuapp.com{{ publicacao.thumbImage }}" class="thumbnail img-fluid"/> 
+                          </a>
+                        </div>
+                        <div class="col-md-7">
+                          <div class="card-block">
+                            <p href="post.html" class="card-text">
+                              {{ publicacao.title }}
+                            </p>
+                            <div class="metafooter">
+                              <div class="wrapfooter">
+                                <span class="meta-footer-thumb">
+                                  <a href="author.html">
+                                    <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal">
+                                  </a>
+                                </span>
+                                <span class="author-meta">
+                                  <p class="post-name"><a href="author.html">{{ publicacao.profileName }}</a></p><br/>
+                                  <span class="post-date">{{ publicacao.postDate}}</span>
+                                  <span class="dot"></span>
+                                  <span class="post-read">6 min de leitura</span>
+                                </span>
+                                <span class="post-read-more">
+                                  <a href="post.html" title="Read Story"></a>
+                                </span> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+      </section>
+
+<!-- Fim do post
+================================================== -->    
+
+<!-- começo do Footer
+================================================== -->
+
+      <div class="footer">
+        <p class="pull-left">Copyright &copy; 2023 Space Blog</p>
+        <p class="pull-right">
+          Space Blog
+          <a target="_blank" href="https://www.wowthemes.net">spaceblog.com</a>
+        </p>
+        <div class="clearfix"></div>
+      </div>
+      
+<!-- fim do Footer
+================================================== -->
+
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
